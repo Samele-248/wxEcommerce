@@ -1,0 +1,56 @@
+<!-- 头像 -->
+<view class="userInfoWrap">
+  <view wx:if="{{userinfo.avatarUrl}}" class="userImgWrap">
+    <image class="userBg" src="{{userinfo.avatarUrl}}"></image>
+    <view class="userInfo">
+      <image class="userIcon" src="{{userinfo.avatarUrl}}"></image>
+      <view class="userName">{{userinfo.nickName}}</view>
+    </view>
+  </view>
+  <view wx:else class="userBut">
+    <navigator url="/pages/login/index">登陆</navigator>
+  </view>
+</view>
+<!-- 内容 -->
+<view class="userContent">
+  <view class="userMain">
+  <!-- 历史足迹  -->
+    <view class="historyWrap">
+      <navigator url="{{item.isUrl}}" wx:for="{{historicalFootprints}}" wx:key="id">
+        <view class="hisNum">{{item.num}}</view>
+        <view class="hisName">{{item.name}}</view>
+      </navigator>
+    </view>
+    <!-- 我的订单 -->
+    <view class="ordersWrap">
+      <view class="ordersTitle">我的订单</view>
+      <view class="orderContent">
+        <navigator
+          wx:for="{{orderForm}}"
+          wx:key="id"
+          url="/pages/order/index?type={{item.id}}"
+        >
+          <view class="iconfont {{item.icon}}">11</view>
+          <view class="orderName">{{item.name}}</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 收货地址管理 -->
+    <view class="addressWrap">
+  收货地址管理
+    </view>
+    <!-- 应用地址管理 -->
+    <view class="appInfoWrap">
+      <view class="appInfoItem appInfoContact">
+        <text>联系客服</text>
+        <text>400555</text>
+      </view>
+      <navigator url="/pages/feedback/index" class="appInfoItem">意见反馈</navigator>
+      <view class="appInfoItem">关于我们</view>
+    </view>
+    <!-- 推荐 -->
+    <view class="recommendWrap">
+    把该应用推荐给其他人
+    </view>
+  </view>
+</view>

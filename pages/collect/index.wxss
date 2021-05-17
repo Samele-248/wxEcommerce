@@ -1,0 +1,48 @@
+.collectMain {
+  background-color: #f3f4f6;
+}
+.collectMain .collectTitle {
+  padding: 40rpx 0;
+}
+.collectMain .collectTitle .collectTips {
+  padding: 15rpx;
+  border: 1rpx solid #ccc;
+  margin-left: 20rpx;
+  background-color: white;
+}
+.collectMain .collectTitle .active {
+  color: var(--themeColor);
+  border-color: currentColor;
+}
+.collectMain .collectCotent .firstTab {
+  background-color: white;
+}
+.collectMain .collectCotent .firstTab .goodsItem {
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+}
+.collectMain .collectCotent .firstTab .goodsItem .goodsImgWrp {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collectMain .collectCotent .firstTab .goodsItem .goodsImgWrp .Image {
+  width: 70%;
+}
+.collectMain .collectCotent .firstTab .goodsItem .goodsInfoWrap {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.collectMain .collectCotent .firstTab .goodsItem .goodsInfoWrap .goodsName {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.collectMain .collectCotent .firstTab .goodsItem .goodsInfoWrap .goodsPrice {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}

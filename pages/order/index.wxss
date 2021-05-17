@@ -1,0 +1,23 @@
+.orderMain .orderItem {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  color: #666;
+}
+.orderMain .orderItem .orderNoRow {
+  display: flex;
+  padding: 10rpx 0;
+  justify-content: space-between;
+}
+.orderMain .orderItem .orderPriceRow {
+  display: flex;
+  padding: 10rpx 0;
+  justify-content: space-between;
+}
+.orderMain .orderItem .orderPriceRow .orderPriceValue {
+  color: var(--themeColor);
+}
+.orderMain .orderItem .orderTimeRow {
+  display: flex;
+  padding: 10rpx 0;
+  justify-content: space-between;
+}

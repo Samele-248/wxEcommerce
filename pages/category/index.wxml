@@ -1,0 +1,52 @@
+<view class="cates">
+  <!-- 搜索框 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框完 -->
+  <view class="catesContainer">
+    <!-- 左侧菜单 -->
+    <scroll-view class="leftMenu" scroll-y>
+      <view
+        wx:for="{{leftMenuList}}"
+        wx:key="index"
+        class="mentItem {{index===currentIndex?'active':''}}"
+        bindtap="handleItemTap"
+        data-index="{{index}}"
+      >{{item}}</view>
+    </scroll-view>
+    <!-- 右侧商品 -->
+    <scroll-view
+      class="rightContent"
+      scroll-y
+      scroll-top="{{scrollTop}}"
+    >
+      <view class="rightChunk"
+        wx:for="{{rightContent}}"
+        wx:key="cat_name"
+        wx:for-item="chunk"
+      >
+      <!-- 商品类标题 -->
+        <view class="chunkTitle">
+          <text class="delimiter">/</text>
+          <text class="title">{{chunk.cat_name}}</text>
+          <text class="delimiter">/</text>
+        </view>
+        <!-- 商品内容 -->
+        <view class="chunkContent">
+        <navigator
+          class="navigator"
+          wx:for="{{chunk.children}}"
+          wx:key="cat_id"
+          url="/pages/goods_list/index?cid={{item.cat_id}}"
+        >
+          <image
+            class="Image"
+            mode="widthFix"
+            src="{{item.cat_icon}}"
+          ></image>
+          <view class="contentTitle">{{item.cat_name}}</view>
+        </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

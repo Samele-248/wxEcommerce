@@ -1,0 +1,82 @@
+<view>
+<!-- 搜索框 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框完 -->
+  <!-- 轮播图 -->
+  <view class="indexSwiper">
+    <swiper
+      class="Swiper"
+      autoplay
+      indicator-dots
+      circular
+    >
+      <swiper-item
+        wx:for="{{swiperList}}"
+        wx:key="goods_id"
+      >
+        <navigator url="{{item.navigator_url}}" class="indexNavigator">
+          <image
+            class="indexImage"
+            mode="widthFix"
+            src="{{item.image_src}}"
+          ></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图完 -->
+  <!-- 导航 -->
+  <view class="indexCate">
+    <navigator
+      class="navIgator"
+      wx:for="{{catesList}}"
+      wx:key="name"
+      url="/pages/category/index"
+      open-type="switchTab"
+    >
+      <image
+        class="image"
+        src="{{item.image_src}}"
+        mode="widthFix"
+      ></image>
+    </navigator>
+  </view>
+  <!-- 导航完 -->
+  <!-- 楼层 -->
+  <view class="indexFloor">
+    <view 
+      class="floorGroup"
+      wx:for="{{floorList}}"
+      wx:for-item="itemChunk"
+      wx:for-index="indexChunk"
+      wx:key="index"
+    >
+    <!-- 标题 -->
+      <view class="floorTitle" >
+        <image
+          mode="widthFix"
+          class="Image"
+          src="{{itemChunk.floor_title.image_src}}"
+        ></image>
+      </view>
+      <!-- 内容 -->
+      <view class="floorList">
+      <navigator
+        class="floorNavigator"
+        wx:for="{{itemChunk.product_list}}"
+        wx:for-item="itemMatter"
+        wx:for-index="indexMatter"
+        wx:key="name"
+        url="{{itemMatter.navigator_url}}"
+      >
+        <image
+          mode="{{indexMatter===0?'widthFix':'scaleToFill'}}"
+          src="{{itemMatter.image_src}}"
+          class="Image"
+        ></image>
+      </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 楼层完 -->
+</view>

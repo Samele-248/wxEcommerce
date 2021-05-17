@@ -1,0 +1,68 @@
+<!-- 与购物车一致，待优化 -->
+<view class="reviceAddressRow">
+ 
+  <view class="userInfoRow">
+    <view class="userInfo">
+      <view class="userName">{{address.userName}}</view>
+      <view class="userSite">{{address.all}}</view>
+    </view>
+    <view class="userPhone">{{address.telNumber}}</view>
+  </view>
+</view>
+<!-- 购物车 -->
+<view class="cartContent">
+  <view class="cartTitle">购物车</view>
+  <view class="cartMain">
+    <block wx:if="{{cart.length !== 0}}">
+      <view
+        class="cartItem"
+        wx:for="{{cart}}"
+        wx:key="index"
+      >
+     
+        <!-- 图片 -->
+        <navigator class="cartImgWrap">
+          <image
+            mode="widthFix"
+            src="{{item.goods_small_logo?item. goods_small_logo:'https://ww1.sinaimg.cn/large/ 007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+          ></image>
+        </navigator>
+        <!-- 右侧内容 -->
+        <view class="cartInfoWrap">
+         <!-- 详细物品信息 -->
+          <view class="goodsName">{{item.goods_name}}</view>
+          <view class="goodsPriceWrap">
+            <view class="goodsPrice">￥{{item.goods_price}}</view>
+            <view class="cartNumtool">
+              <view class="goodsNum">X{{item.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <image
+        mode="widthFix"
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623706568&t=4683dd867aa37573881b01df9d33f355"
+      ></image>
+    </block>
+  </view>
+</view>
+
+<button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">授权7</button>
+<!-- 工具栏 -->
+<view class="footerTool">
+  <!-- 全选 -->
+ 
+  <!-- 合计 -->
+  <view class="totalPriceWrap">
+    <view class="totalPrice">
+      合计：<text class="totalPriceText">￥{{totalPrice}}</text>
+    </view>
+    <view>包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="orderPayWrap" bindtap="handleOrderPay">
+    支付({{totalNum}})
+  </view>
+</view>

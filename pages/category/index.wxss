@@ -1,0 +1,48 @@
+page {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .catesContainer {
+  height: calc(100vh - 90rpx);
+  display: flex;
+}
+.cates .catesContainer .leftMenu {
+  flex: 2;
+}
+.cates .catesContainer .leftMenu .mentItem {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.cates .catesContainer .leftMenu .active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}
+.cates .catesContainer .rightContent {
+  flex: 8;
+}
+.cates .catesContainer .rightContent .rightChunk .chunkTitle {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cates .catesContainer .rightContent .rightChunk .chunkTitle .delimiter {
+  color: red;
+  padding: 0 10rpx;
+}
+.cates .catesContainer .rightContent .rightChunk .chunkContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .catesContainer .rightContent .rightChunk .chunkContent .navigator {
+  width: 33.33%;
+  text-align: center;
+}
+.cates .catesContainer .rightContent .rightChunk .chunkContent .navigator .Image {
+  width: 50%;
+}

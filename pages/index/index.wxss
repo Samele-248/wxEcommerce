@@ -1,0 +1,38 @@
+.indexSwiper .Swiper {
+  height: 340rpx;
+}
+.indexSwiper .Swiper .indexNavigator .indexImage {
+  width: 100%;
+}
+.indexCate {
+  display: flex;
+}
+.indexCate .navIgator {
+  flex: 1;
+  padding: 20rpx;
+}
+.indexCate .navIgator .image {
+  width: 100%;
+}
+.indexFloor .floorGroup .floorTitle .Image {
+  width: 100%;
+}
+.indexFloor .floorGroup .floorList {
+  overflow: hidden;
+}
+.indexFloor .floorGroup .floorList .floorNavigator {
+  float: left;
+  width: 33.33%;
+}
+.indexFloor .floorGroup .floorList .floorNavigator .Image {
+  width: 100%;
+  height: 100%;
+}
+.indexFloor .floorGroup .floorList .floorNavigator:nth-last-child(-n+4) {
+  height: calc(33.33vw * 386 / 232 / 2);
+  border-left: 10rpx solid #fff;
+}
+.indexFloor .floorGroup .floorList .floorNavigator:nth-child(2),
+.indexFloor .floorGroup .floorList .floorNavigator:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
